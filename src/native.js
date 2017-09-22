@@ -6,10 +6,10 @@ const NetworkListener = Provider => React.createClass({
   displayName: 'NetworkListener',
   _wasOnline: undefined,
   componentDidMount () {
-    AppState.addEventListener('change', this._changeListener)
+    NetInfo.addEventListener('change', this._changeListener)
   },
   componentWillUnmount () {
-    AppState.removeEventListener('change', this._changeListener)
+    NetInfo.removeEventListener('change', this._changeListener)
   },
   render () {
     return <Provider {...this.props} />
